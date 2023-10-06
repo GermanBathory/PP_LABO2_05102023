@@ -41,7 +41,8 @@
             lblOperacion = new Label();
             lblSegundoOperador = new Label();
             lblResultado = new Label();
-            listBox1 = new ListBox();
+            lstHistorial = new ListBox();
+            lblHistorial = new Label();
             grpSistema.SuspendLayout();
             SuspendLayout();
             // 
@@ -181,22 +182,34 @@
             lblResultado.TabIndex = 17;
             lblResultado.Text = "Resultado:";
             // 
-            // listBox1
+            // lstHistorial
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(485, 39);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(258, 214);
-            listBox1.TabIndex = 18;
+            lstHistorial.FormattingEnabled = true;
+            lstHistorial.ItemHeight = 15;
+            lstHistorial.Location = new Point(584, 58);
+            lstHistorial.Name = "lstHistorial";
+            lstHistorial.Size = new Size(258, 214);
+            lstHistorial.TabIndex = 18;
+            lstHistorial.SelectedIndexChanged += lstHistorial_SelectedIndexChanged;
+            // 
+            // lblHistorial
+            // 
+            lblHistorial.AutoSize = true;
+            lblHistorial.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblHistorial.Location = new Point(584, 9);
+            lblHistorial.Name = "lblHistorial";
+            lblHistorial.Size = new Size(96, 30);
+            lblHistorial.TabIndex = 19;
+            lblHistorial.Text = "Historial";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ScrollBar;
-            ClientSize = new Size(800, 450);
-            Controls.Add(listBox1);
+            ClientSize = new Size(884, 471);
+            Controls.Add(lblHistorial);
+            Controls.Add(lstHistorial);
             Controls.Add(lblResultado);
             Controls.Add(lblSegundoOperador);
             Controls.Add(lblOperacion);
@@ -236,6 +249,7 @@
         private Label lblOperacion;
         private Label lblSegundoOperador;
         private Label lblResultado;
-        private ListBox listBox1;
+        private ListBox lstHistorial;
+        private Label lblHistorial;
     }
 }
